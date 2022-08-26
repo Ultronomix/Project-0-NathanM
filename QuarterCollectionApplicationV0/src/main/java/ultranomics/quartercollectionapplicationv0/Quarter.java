@@ -2,7 +2,7 @@ package ultranomics.quartercollectionapplicationv0;
 
 public class Quarter{
     short idNumber;
-    short idYear;
+    String idYear;
     State idState;
     Mint idMint; 
     boolean inCollection;
