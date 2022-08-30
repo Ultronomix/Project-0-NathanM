@@ -1,7 +1,7 @@
 package ultranomics.quartercollectionapplicationv0;
 
 public class Collection {
-    short idNumber;
-    String name;
-    short collectorIDNum;
+    private short idNumber;
+    private String name;
+    private short collectorIDNum;
 }

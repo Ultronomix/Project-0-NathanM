@@ -1,12 +1,12 @@
 package ultranomics.quartercollectionapplicationv0;
 
 public class Quarter{
-    short idNumber;
-    String idYear;
-    State idState;
-    Mint idMint; 
-    boolean inCollection;
-    short collectionIDNum;
+    private short idNumber;
+    private String idYear;
+    private State idState;
+    private Mint idMint; 
+    private boolean inCollection;
+    private short collectionIDNum;
 }
 
 enum State{
