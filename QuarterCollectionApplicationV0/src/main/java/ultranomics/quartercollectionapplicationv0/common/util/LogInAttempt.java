@@ -4,15 +4,12 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import ultranomics.quartercollectionapplicationv0.Collector;
 import ultranomics.quartercollectionapplicationv0.common.datasource.ConnectionFactory;
 
 public class LogInAttempt {
     public static short attempt(String username, String password){
         String sql = "SELECT * FROM COLLECTORS;";
-        
-        ArrayList<Collector> allCollectors = new ArrayList<>();
         
         ConnectionFactory connection = new ConnectionFactory();
         try{
@@ -30,19 +27,16 @@ public class LogInAttempt {
                 collect.setIDNumber(rs.getShort("collector_id"));
                 collect.setName(rs.getString("collector_name"));
                 collect.setUsername(rs.getString("collector_username"));
-                //!!!this needs to be done differently for password security in the future!!!
                 collect.setPassword(rs.getString("collector_password"));
                 
-                allCollectors.add(collect);
+                if(collect.getUsername().equals(username) && collect.getPassword().equals(password)){
+                    return(collect.getIDNumber());
+                }
             }
-            
-            
-            
-            
         }catch(SQLException e){
             System.err.println("Error: could not establish connection to Database");
         }
         
-        
+        return(0);
     }
 }

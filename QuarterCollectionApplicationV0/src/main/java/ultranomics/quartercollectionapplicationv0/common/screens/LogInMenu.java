@@ -14,17 +14,49 @@ public class LogInMenu {
     static boolean exitWatcher = false;
     static boolean usernameMatch = false;
     static boolean passwordMatch = false;
+    static boolean userIdentified = false;
     static short userIDNum;
     
     public static void menu(){
         System.out.println(menuText);
         
-        System.out.print("Username: ");
-        usernameInput = input.nextLine();
-        
-        System.out.println("password: ");
-        passwordInput = input.nextLine();
-        
-        userIDNum = LogInAttempt.attempt(usernameInput, passwordInput);
+        do{
+            System.out.print("Username: ");
+            usernameInput = input.nextLine();
+
+            System.out.print("Password: ");
+            passwordInput = input.nextLine();
+
+            userIDNum = LogInAttempt.attempt(usernameInput, passwordInput);
+            
+            if(userIDNum == 0){
+                System.out.println("\nUsername and Password do not match any known users");
+                System.out.println("Would you like to try again? Y/N");
+                System.out.print(">");
+
+                String response = input.nextLine();
+                response = response.toLowerCase();
+
+                switch (response.charAt(0)) {
+                    case 'y':
+                        //the loop will reiterate
+                        break;
+                    case 'n':
+                        //this will break out of the loop and return us to the WelcomeMenu
+                        userIdentified = true;
+                        break;
+                    default:
+                        System.out.println("Response not recognized. Make sure to reply Y or N");
+                        //the loop will reiterate with input correction message to user
+                        break;
+                }
+            }else{
+                //if LogInAttempt is successful the returned UserIDNumber will 
+                //match the account of our user, allowing us to access their 
+                //collections
+                CollectionSelectionMenu.menu(userIDNum);
+            }
+            
+        }while(userIdentified != true);
     }
 }
