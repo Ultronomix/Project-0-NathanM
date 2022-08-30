@@ -14,6 +14,7 @@ public class QuarterCollectionMain {
             }
         }catch(SQLException e){
             System.err.println("Error: could not establish connection to Database");
+            System.exit(0);
         }
     }//end main method
 }//end class

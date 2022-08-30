@@ -6,6 +6,7 @@ public class Quarter{
     State idState;
     Mint idMint; 
     boolean inCollection;
+    short collectionIDNum;
 }
 
 enum State{
