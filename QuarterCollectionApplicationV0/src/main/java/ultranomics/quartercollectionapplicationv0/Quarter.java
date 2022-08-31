@@ -7,8 +7,49 @@ public class Quarter{
     private Mint idMint; 
     private boolean inCollection;
     private short collectionIDNum;
-}
 
+
+    //getters
+    public short getIDNumber(){
+        return this.idNumber;
+    }
+    public String getIDYear(){
+        return this.idYear;
+    }
+    public State getIDState(){
+        return this.idState;
+    }
+    public Mint getIDMint(){
+        return this.idMint;
+    }
+    public boolean getInCollection(){
+        return this.inCollection;
+    }
+    public short getCollectionIDNum(){
+        return this.collectionIDNum;
+    }
+
+    //setters
+    public void setIDNumber(short idNumber){
+        this.idNumber = idNumber;
+    }
+    public void setIDYear(String idYear){
+        this.idYear = idYear;
+    }
+    public void setIDState(State idState){
+        this.idState = idState;
+    }
+    public void setIDMint(Mint idMint){
+        this.idMint = idMint;
+    }
+    public void setInCollection(boolean inCollection){
+        this.inCollection = inCollection;
+    }
+    public void setCollectionIDNum(short collectionIDNum){
+        this.collectionIDNum = collectionIDNum;
+    }
+
+}
 enum State{
     ALABAMA,
     ALASKA,
