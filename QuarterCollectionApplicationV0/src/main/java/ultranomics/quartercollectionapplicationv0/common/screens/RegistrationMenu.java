@@ -48,7 +48,7 @@ public class RegistrationMenu {
         
         CollectorCreation.builder(newColl);
         
-        System.out.println("You can now log in from the Welcome Menu!");
+        System.out.println("You can now log in from the Welcome Menu!\n");
         
     }
 }

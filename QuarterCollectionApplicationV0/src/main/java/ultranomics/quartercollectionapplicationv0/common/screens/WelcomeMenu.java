@@ -2,15 +2,18 @@ package ultranomics.quartercollectionapplicationv0.common.screens;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import ultranomics.quartercollectionapplicationv0.common.util.CollectorEditor;
+import ultranomics.quartercollectionapplicationv0.common.util.CollectorPrinter;
 
 public class WelcomeMenu {
     static String menuText = 
             "----------------------------\n"+
             "Welcome to QuarterCollector!\n"+
             "Please select from the options below:\n"+
-            "1] Log In\n"+
+            "1] Print Users\n"+
             "2] Create New User\n"+
-            "3] Exit\n";
+            "3] Edit a Collector\n"+
+            "4] Exit\n";
     static Scanner input = new Scanner(System.in);// scanner for user input
     static int menuInput = 0;
     static boolean exitWatcher = false;
@@ -27,10 +30,10 @@ public class WelcomeMenu {
                     input.nextLine();//consume new line character
                     
                     //loop escape once proper input is obtained
-                    if(menuInput >= 1 && menuInput <=3){
+                    if(menuInput >= 1 && menuInput <=4){
                         inputValidation = true; 
                     }else{
-                        System.out.println("Input Error: input must be in range listed above (1-3)\n");
+                        System.out.println("Input Error: input must be in range listed above (1-4)\n");
                     }
                 }while(inputValidation == false);
             }catch(InputMismatchException e){
@@ -40,12 +43,15 @@ public class WelcomeMenu {
             
             switch(menuInput){
                 case 1:
-                    LogInMenu.menu();
+                    CollectorPrinter.print();
                     break;
                 case 2:
                     RegistrationMenu.menu();
                     break;
                 case 3:
+                    CollectorEditor.edit();
+                    break;
+                case 4:
                     System.out.println("Goodbye!");
                     exitWatcher = true;
                     break;
