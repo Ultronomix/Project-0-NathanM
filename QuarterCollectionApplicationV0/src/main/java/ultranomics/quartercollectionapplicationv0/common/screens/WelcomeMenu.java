@@ -9,9 +9,8 @@ public class WelcomeMenu {
             "Welcome to QuarterCollector!\n"+
             "Please select from the options below:\n"+
             "1] Log In\n"+
-            "2] New User\n"+
-            "3] Exit\n"+
-            ">";
+            "2] Create New User\n"+
+            "3] Exit\n";
     static Scanner input = new Scanner(System.in);// scanner for user input
     static int menuInput = 0;
     static boolean exitWatcher = false;

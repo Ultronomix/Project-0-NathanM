@@ -21,10 +21,10 @@ public class LogInMenu {
         System.out.println(menuText);
         
         do{
-            System.out.print("Username: ");
+            System.out.println("Username: ");
             usernameInput = input.nextLine();
 
-            System.out.print("Password: ");
+            System.out.println("Password: ");
             passwordInput = input.nextLine();
 
             userIDNum = LogInAttempt.attempt(usernameInput, passwordInput);
@@ -32,7 +32,6 @@ public class LogInMenu {
             if(userIDNum == 0){
                 System.out.println("\nUsername and Password do not match any known users");
                 System.out.println("Would you like to try again? Y/N");
-                System.out.print(">");
 
                 String response = input.nextLine();
                 response = response.toLowerCase();
