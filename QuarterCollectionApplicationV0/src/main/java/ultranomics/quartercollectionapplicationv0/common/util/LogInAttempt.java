@@ -34,7 +34,8 @@ public class LogInAttempt {
                 }
             }
         }catch(SQLException e){
-            System.err.println("Error: could not establish connection to Database");
+            System.err.println("Error: problem with the Database");
+            e.printStackTrace();
         }
         
         return(0);
