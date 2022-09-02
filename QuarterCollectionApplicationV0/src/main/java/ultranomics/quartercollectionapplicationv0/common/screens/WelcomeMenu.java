@@ -17,8 +17,11 @@ public class WelcomeMenu {
     static boolean inputValidation = false;
     
     public static void menu(){
+        //loop for menu exit - will exit whole application
         do{
+            //input validation - no characters only ints
             try{
+                //input validation - no numbers outside 1-3
                 do{
                     System.out.println(menuText);
                     
