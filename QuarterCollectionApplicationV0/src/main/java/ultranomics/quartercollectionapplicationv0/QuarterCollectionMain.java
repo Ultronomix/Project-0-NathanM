@@ -1,8 +1,5 @@
 package ultranomics.quartercollectionapplicationv0;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import ultranomics.quartercollectionapplicationv0.common.datasource.ConnectionFactory;
 import ultranomics.quartercollectionapplicationv0.common.screens.WelcomeMenu;
 
 public class QuarterCollectionMain {
